@@ -64,7 +64,8 @@ public class Operation_donnees {
                 Operation op = new Operation(sensOp, c.getNumero(),montant,formater.format( dat ));
                 Operation.List_Op.add(op);
                 System.out.println("----------------------------------------------------");
-                System.out.println("Opération effectuée avec succée \n" + "Sens opération:"+sensOp+" \n"+"Numéro Compte:"+" "+String.format(" %03d", c.getNumero())+"\n"+
+                System.out.println("Opération effectuée avec succée \n" + "Sens opération:"
+                                   +sensOp+" \n"+"Numéro Compte:"+" "+String.format(" %03d", c.getNumero())+"\n"+
                         "Nouveau solde:"+" "+c.getSolde()+" euros\n"+ "Date:"+formater.format( dat ));
                 System.out.println("----------------------------------------------------");
             } 
@@ -85,7 +86,9 @@ public class Operation_donnees {
         for (Compte c : Compte.TCptes) {
             if (c.getClient().getNumero() == numCl) {
                 exist=true;
-                System.out.println("- "+"Nom: "+c.getClient().getNom()+" "+"N° compte:"+String.format(" %03d", c.getNumero())+" "+"Solde="+" "+c.getSolde()+"euros");
+                System.out.println("- "+"Nom: "+c.getClient().getNom()+" "
+                                   +"N° compte:"+String.format(" %03d", c.getNumero())+" "+"Solde="+
+                                   " "+c.getSolde()+"euros");
          }
         }System.out.println("****************************************************************************");
            if(!exist) {
@@ -100,7 +103,8 @@ public class Operation_donnees {
         for (Compte c : Compte.TCptes) {
             if (c.getNumero() == numCpt) {
                 exist=true;
-                System.out.println("ce compte appartient à:"+" Nom :"+c.getClient().getNom()+" "+"Solde="+" "+c.getSolde()+"Euros");
+                System.out.println("ce compte appartient à:"+" Nom :"+c.getClient().getNom()+
+                                   " "+"Solde="+" "+c.getSolde()+"Euros");
             }
         }
            if(!exist) {
@@ -125,7 +129,8 @@ public class Operation_donnees {
                 Operation op = new Operation(sensOp, c.getNumero(),montant,formater.format( dat ));
                 Operation.List_Op.add(op);
                 System.out.println("----------------------------------------------------");
-                System.out.println("Opération effectuée avec succée \n" + "Sens opération: Retrait\n"+"Numéro Compte:"+" "+String.format(" %03d", c.getNumero())+"\n"+
+                System.out.println("Opération effectuée avec succée \n" + "Sens opération: 
+                                   Retrait\n"+"Numéro Compte:"+" "+String.format(" %03d", c.getNumero())+"\n"+
                         "Nouveau solde:"+" "+c.getSolde()+" euros\n"+ "Date:"+formater.format( dat ));
                 System.out.println("----------------------------------------------------");
             } 
@@ -140,8 +145,10 @@ public class Operation_donnees {
          System.out.print("Le rapport d'activités:\n");
          System.out.print("--------------------------------------------------------------------\n");
         for(int i = 0; i < Operation.List_Op.size(); i++){
-            System.out.println("+"+Operation.List_Op.get(i).getSensOp()+" de "+" "+Operation.List_Op.get(i).getMntOp()+" "+"Euros"+" "+
-                    "sur le compte:"+" "+Operation.List_Op.get(i).getNumCptOp()+" date:"+""+Operation.List_Op.get(i).getDateOp());
+            System.out.println("+"+Operation.List_Op.get(i).getSensOp()+" de "+" "
+                               +Operation.List_Op.get(i).getMntOp()+" "+"Euros"+" "+
+                    "sur le compte:"+" "+Operation.List_Op.get(i).getNumCptOp()+
+                               " date:"+""+Operation.List_Op.get(i).getDateOp());
             System.out.println("------------------------------------------------------------------");
         }
     }
@@ -156,7 +163,8 @@ public class Operation_donnees {
            interet = (c.getSolde() * durée* c.getTauxInteret())/(12*100);
            double Solde_Intérêt=c.getSolde() + interet;
            c.setSolde(Solde_Intérêt);
-            System.out.println("Numero compte: "+String.format(" %03d", c.getNumero())+" "+"Acien solde: "+ancien_solde+" "+"nouveau solde"+" "+c.getSolde());
+            System.out.println("Numero compte: "+String.format(" %03d", c.getNumero())+" "
+                               +"Acien solde: "+ancien_solde+" "+"nouveau solde"+" "+c.getSolde());
          }
             System.out.println("----------------------------------------------------------------------");
    }
